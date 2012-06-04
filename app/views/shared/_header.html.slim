@@ -1,0 +1,16 @@
+header
+	.container
+		- if user_signed_in?
+				.fr.top_links_container
+					= link_to 'Home', root_path
+					= link_to 'Sign Out', destroy_user_session_path
+				.clearfix
+		- else
+			.login_links
+				= link_to 'Sign In', new_user_session_path, :class => 'mrl fl db'
+				= link_to 'Register', new_user_registration_path, :class => 'mrl fl db'
+				= link_to raw("<div class='fb_icon fl'>Login with facebook</div>"), '/auth/facebook?display=popup', :class => 'mrl db'
+				= link_to raw("<div class='lin_icon fl'>Login with Linked In</div>"), '/auth/linkedin', :class => 'mrl db'
+				= link_to raw("<div class='twt_icon fl'>Login with Twitter</div>"), '/auth/twitter', :class => 'mrl db'
+				.clearfix
+		.clearfix
