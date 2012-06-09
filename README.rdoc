@@ -1,2 +1,16 @@
 Starter App for Solivar Technologies
 
+Step 1 : Clone project from github
+Step 2 : Rename folder name from "StarterApp" to "NewProjectName"
+Step 3 : In Sublime editor Prest CTRL-SHIFT-F and find word "Starter" replace with "NewProjectName"
+				 These files will be modified
+						config/application.rb
+						config/environment.rb
+						config/environments/development.rb
+						config/environments/test.rb
+						config/environments/production.rb
+						config/routes.rb
+						config.ru
+						initializers/secret_token.rb
+						initializers/session_store.rb
+Step 4 : Bundle install, rake db:migrate, rake db:seed and  test

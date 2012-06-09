@@ -1,59 +1,50 @@
 source 'http://rubygems.org'
+
 gem 'rails', '3.2.2'
 
-gem "devise", ">= 2.1.0.rc"
-gem "omniauth"
-gem 'omniauth-linkedin'
-gem 'omniauth-facebook'
-gem 'omniauth-twitter'
-gem 'nifty-generators'
-gem "bootstrap-sass", ">= 2.0.1"
-gem 'jquery-rails'
-gem "haml", ">= 3.1.4"
-gem "slim-rails"
-gem 'formtastic'
-gem 'best_in_place'
 
-gem 'activeadmin'
-gem "meta_search",    '>= 1.1.0.pre'
+gem "devise", ">= 2.1.0.rc"           # for user authentication
+gem "omniauth"                        # Authentification for external sites 
+gem 'omniauth-linkedin'               # self explained
+gem 'omniauth-facebook'               # self explained
+gem 'omniauth-twitter'                # self explained
+gem 'nifty-generators'                # scaffolding for controllers and views. 
+gem "bootstrap-sass", ">= 2.0.1"      # Bootstrap CSS (actually SASS)
+gem 'jquery-rails'                    # self explained
+gem "haml", ">= 3.1.4"                # view templating engine for haml
+gem "slim-rails"                      # view templating engine for slim
+gem 'formtastic'                      # Helper methods forms
+gem 'best_in_place'                   # In place editing ?????
+gem 'activeadmin'                     # For admin dashboard  
+gem "meta_search", '>= 1.1.0.pre'     # Used in admin dashboard, for searching within models.
 
-group :development, :test do
-  gem 'sqlite3'
-  gem "rspec-rails", ">= 2.9.0.rc2"
-  gem "factory_girl_rails", ">= 2.0.0.rc"
+
+group :development, :test do                
+  gem "haml-rails", ">= 0.3.4"                # templating engine for views
+  gem 'sqlite3'                               # developement database 
+  gem "rspec-rails", ">= 2.9.0.rc2"           # model testing
+  gem "factory_girl_rails", ">= 2.0.0.rc"     # generating test data
 end
 
-group :production do
-  gem 'pg'
-end  
+group :test do
+  gem "cucumber-rails", ">= 1.3.0"            # functional testing
+  gem "capybara", ">= 1.1.2"                  # Testing tools with rails  
+  gem "database_cleaner", ">= 0.7.1"          # self explained
+  gem "launchy", ">= 2.0.5"                   # Testing with browser
+end
 
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+# for pre compilation before going to production.
+group :assets do                              
+  gem 'sass-rails',   '~> 3.2.3'          
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
   gem 'jquery-ui-rails'
 end
 
-group :development do
-  gem "guard-bundler", ">= 0.1.3"  
-  gem "guard-rails", ">= 0.0.3"    
-  gem "guard-rspec", ">= 0.4.3"    
-  gem "guard-cucumber", ">= 0.6.1" 
-  gem "slim-rails"
-  gem "haml-rails", ">= 0.3.4"
-  gem "factory_girl_rails", ">= 2.0.0.rc"
-  gem "guard", ">= 0.6.2"
-end
+group :production do
+  gem 'pg'                                    # Production database is PostgresSQL.
+end  
 
-group :test do
-  gem "machinist"
-  gem "email_spec", ">= 1.2.1"
-  gem "cucumber-rails", ">= 1.3.0"
-  gem "capybara", ">= 1.1.2"
-  gem "database_cleaner", ">= 0.7.1"
-  gem "launchy", ">= 2.0.5"
 
-end
-gem 'libnotify', :group => :development
-gem 'rb-inotify', :group => :development
-gem "mocha", :group => :test
+
+
