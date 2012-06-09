@@ -1,0 +1,23 @@
+.popup.special
+	.popup_top
+		
+		.popup_header
+			h2 Sign Up
+		
+		.popup_content.big
+			= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+				= devise_error_messages!
+
+				= f.email_field :email, :placeholder => 'EMAIL'
+
+				- if @user.password_required?
+					= f.password_field :password, :placeholder => 'PASSWORD'
+					= f.password_field :password_confirmation, :placeholder => 'CONFIRM PASSWORD'
+
+				= f.submit "Sign up", :class => 'btn fr'
+				.clearfix
+
+				= render :partial => "devise/shared/links"
+
+	.popup_footer
+		= render :partial => 'shared/authentication_links'

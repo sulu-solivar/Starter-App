@@ -13,7 +13,7 @@ html
 		= javascript_include_tag "https://www.google.com/jsapi"
 		= csrf_meta_tags
 		= yield (:head)
-	body
+	body.gray_bg
 		#wrapper
 			= render :partial => 'shared/header'
 			= render :partial => 'shared/notice'

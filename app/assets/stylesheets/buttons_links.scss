@@ -1,0 +1,49 @@
+@import 'mixins';
+
+@mixin default_link {
+	color: #1271B5;
+	@include tdn;
+	&:hover {
+		@include tdu;
+	}
+}
+
+@mixin white_link {
+	color: #DDD;
+	@include tdn;
+	&:hover {
+		color: #FFF
+	}
+}
+
+@mixin button {
+	@include p(5px);
+	@include gradient(#1585D5, #105D93);
+	@include fb;
+	@include no_border;
+	@include cp;
+	@include rad(5px);
+	@include shadow(0px 2px 2px #333);
+	border: 1px solid #1585D5;
+	color: #FFF;
+	&:active {
+		@include shadow(0px 2px 0px #AAA);
+	}
+}
+
+
+// usage of buttons_links
+a {
+	@include default_link;
+	&:focus {
+		outline-style: none;
+	}
+}
+
+.white_link {
+	@include white_link;
+}
+
+.btn {
+	@include button;
+}

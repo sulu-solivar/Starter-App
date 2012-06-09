@@ -4,13 +4,14 @@ header
 			.container
 				.nav-collapse.collapse
 					ul.nav
-						- if user_signed_in?
-								li= link_to 'Home', root_path
-								li= link_to 'Sign Out', destroy_user_session_path
-						- else
-							li= link_to 'Sign In', new_user_session_path, :class => 'mrl fl db'
-							li= link_to 'Register', new_user_registration_path, :class => 'mrl fl db'
-							li= link_to image_tag('auth_buttons/facebook_32.png'), '/auth/facebook?display=popup', :class => 'mrl db', :style => 'padding: 3px 5px 3px 0px'
-							li= link_to image_tag('auth_buttons/linkedin_32.png'), '/auth/linkedin', :class => 'mrl db', :style => 'padding: 3px 5px 3px 0px'
-							li= link_to image_tag('auth_buttons/twitter_32.png'), '/auth/twitter', :class => 'mrl db', :style => 'padding: 3px 5px 3px 0px'
+						li
+							= link_to '', root_path, :class => 'logo'
+						.fr
+							- if user_signed_in?
+									li= link_to 'Home', root_path
+									li= link_to 'Sign Out', destroy_user_session_path
+							- else
+								li= link_to 'Sign In', new_user_session_path, :class => 'mrl fl db'
+								li= link_to 'Register', new_user_registration_path, :class => 'mrl fl db'
+							.clearfix
 						.clearfix

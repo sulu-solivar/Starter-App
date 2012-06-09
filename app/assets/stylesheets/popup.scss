@@ -1,0 +1,38 @@
+@import 'mixins';
+
+@mixin popup {
+	@include rad(10px);
+	@include shadow(0px 0px 5px #000);
+	@include absolute;
+	@include ml(-235px);
+	width: 470px;
+	left: 50%;
+	top: 20%;
+	.popup_top {
+		@include gradient(#CCC, #BBB);
+		@include p(10px 20px 20px 20px);
+		@include rad(10px 10px 0px 0px);
+		.popup_header {
+			@include fb;
+			color: #FFF;
+			text-shadow: 0px 0px 2px #333;
+		}
+		.popup_content {
+
+		}
+	}
+	.popup_footer {
+		@include rad(0px 0px 10px 10px);
+		@include gradient(#EEE, #CCC);
+		@include p(10px);
+		border-top: 1px solid #888;
+	}
+}
+
+
+
+
+// Usage of popup
+.popup {
+	@include popup;
+}

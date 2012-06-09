@@ -1,0 +1,22 @@
+.popup.special
+
+	.popup_top
+
+		.popup_header
+			h2 Sign In
+
+		.popup_content.big
+			= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+				= f.email_field :email, :placeholder => 'EMAIL'
+				= f.password_field :password, :placeholder => 'PASSWORD'
+
+				- if devise_mapping.rememberable?
+					= f.check_box :remember_me, :class => 'fl'
+					= f.label :remember_me, :class => 'fl mls light_text'
+
+				= f.submit "Sign in", :class => 'btn fr'
+				.clearfix
+
+				= render :partial => 'devise/shared/links'
+	.popup_footer
+		= render :partial => 'shared/authentication_links'

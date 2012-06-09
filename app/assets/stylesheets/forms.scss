@@ -1,0 +1,26 @@
+@import 'mixins';
+
+input, select, textarea {
+	@include default_font;
+}
+
+	input[type="submit"]::moz-inner-focus {
+		border: 0;
+	}
+
+.popup.special {
+	input[type="text"], input[type="email"], input[type="password"], select, textarea {
+		@include fb;
+	}
+	.big {
+		input[type="text"], input[type="email"], input[type="password"], select, textarea {
+			background: #FFF;
+			border: 5px solid #b0b0b0;
+			font-size: 16px;
+			width: 400px;
+			@include p(10px);
+			@include rad(6px);
+			@include mb(10px);
+		}
+	}
+}

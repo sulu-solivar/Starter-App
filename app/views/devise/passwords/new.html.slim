@@ -1,0 +1,20 @@
+.popup.special
+	.popup_top
+		
+		.popup_header
+			h2 Forgot your password?
+		
+		.popup_content.big
+
+			= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+				= devise_error_messages!
+
+				= f.email_field :email, :placeholder => 'ENTER YOUR EMAIL ADDRESS'
+
+				= f.submit "Send me reset password instructions", :class => 'btn fr'
+				.clearfix
+				
+			= render :partial => "devise/shared/links"
+
+	.popup_footer
+		= render :partial => 'shared/authentication_links'

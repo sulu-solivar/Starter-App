@@ -1,0 +1,144 @@
+// common mixins
+
+@mixin rad($radius) {
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+}
+@mixin fl {
+	float: left;
+}
+@mixin fr {
+	float: right;
+}
+@mixin fb {
+	font-weight: bold;
+}
+@mixin db {
+	display: block;
+}
+@mixin dib {
+	display: inline-block;
+}
+@mixin dn {
+	display: none;
+}
+@mixin no_border {
+	border:none;
+}
+@mixin ma {
+	margin: auto;
+}
+
+@mixin m($px) {
+	margin: $px;
+}
+@mixin mt($px) {
+	margin-top: $px;
+}
+@mixin mr($px) {
+	margin-right: $px;
+}
+@mixin mb($px) {
+	margin-bottom: $px;
+}
+@mixin ml($px) {
+	margin-left: $px;
+}
+@mixin p($px) {
+	padding: $px;
+}
+@mixin pt($px) {
+	padding-top: $px;
+}
+@mixin pr($px) {
+	padding-right: $px;
+}
+@mixin pb($px) {
+	padding-bottom: $px;
+}
+@mixin pl($px) {
+	padding-left: $px;
+}
+
+@mixin tdn {
+	text-decoration: none;
+}
+@mixin tdu {
+	text-decoration: underline;
+}
+@mixin light_text {
+	color: #999;
+}
+@mixin cp {
+	cursor: pointer;
+}
+@mixin relative {
+	position: relative;
+}
+@mixin absolute {
+	position: absolute;
+}
+@mixin shadow($shade) {
+	-moz-box-shadow: $shade;
+	-webkit-box-shadow: $shade;
+	box-shadow: $shade;
+}
+@mixin success {
+	background:#64d258;
+	// border:1px solid #1ab00a;
+}
+@mixin error {
+	background-color:#ffa9a9;
+	// border:1px solid #ff6e6e;
+}
+
+@mixin clearfix {
+	clear: both;
+}
+@mixin content_width {
+	width: 980px;
+}
+
+@mixin beautify_params {
+	@include clearfix;
+	@include mb(10px);
+}
+
+@mixin gradient($start, $end) {
+	background-image:-moz-linear-gradient(top, $start, $end) !important;
+	background-image:-ms-linear-gradient(top, $start, $end) !important;
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from($start), to($end)) !important;
+	background-image:-webkit-linear-gradient(top, $start, $end) !important;
+	background-image:-o-linear-gradient(top, $start, $end) !important;
+	background-image:linear-gradient(top, $start, $end) !important;
+	background-repeat:repeat-x;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='$start', endColorstr='$end', GradientType=0) !important;
+}
+
+@mixin default_font {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+@mixin no_border {
+	border: none !important;
+}
+
+@mixin floated {
+	li {
+		@include fl;
+	}
+}
+//@mixin component_border {
+//	border: 1px solid $border_color;
+//	@include rad5;
+//}
+
+//@mixin component {
+//	-webkit-border-radius: 5px;
+//	-moz-border-radius: 5px;
+//	border-radius: 5px;
+//	background: #FFF;
+//	border: 1px solid #DDD;
+//	margin-bottom: 10px;
+//}

@@ -1,0 +1,36 @@
+@import 'mixins';
+@import 'buttons_links';
+
+header {
+	background: #f4f4f4;
+	border-bottom: 1px solid #004B81;
+	background-color: #CCC !important;
+	color: #333 !important;
+	@include gradient(#1585D5, #105D93);
+	a {
+		
+	}
+	ul.nav {
+		li {
+			@include db;
+			@include fl;
+			a {
+				line-height: 40px;
+				height: 40px;
+				@include db;
+			}
+			img {
+				@include pt(5px)
+			}
+		}
+	}
+	a {
+		@include white_link
+	}
+}
+
+.logo {
+	background: url('logo.png') no-repeat;
+	width: 400px; // image's width can be varied upto 400px (227px is starter app's width)
+	height: 40px;
+}
