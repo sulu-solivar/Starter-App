@@ -3,11 +3,8 @@ Starter::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
-
   match '/auth/:provider/callback' => 'authentications#create'
 
-
-  
   devise_for :users, :controllers => { :registrations => 'registrations' } do
     get '/users/sign_out' => 'devise/sessions#destroy' # added this becaause of sign_out bug.
   end
@@ -16,14 +13,15 @@ Starter::Application.routes.draw do
 
   controller :home do
     match '/about', :action => 'about', :as => 'about'
+    match '/home', :action => 'index', :as => 'home'
   end
   
   controller :devise_checker do
     match '/check_devise', :action => 'check_devise', :as => 'check_devise'
   end
 
-
   root :to => 'devise_checker#check_devise'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
