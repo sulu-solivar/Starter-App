@@ -8,7 +8,7 @@ class DeviseCheckerController < ApplicationController
 			redirect_to home_path
 		else
 			if devise_enabled
-				redirect_to new_user_registration_path
+				redirect_to new_user_session_path
 			else
 				render :layout => 'login', :action => 'service_login'
 			end

@@ -1,18 +1,22 @@
+- user = current_user
 header
 	.navbar.navbar-fixed-top
 		.navbar-inner
-			.container
+			.container.pr
 				.nav-collapse.collapse
 					ul.nav
 						li
 							= link_to '', root_path, :class => 'logo'
 						.fr
 							- if user_signed_in?
+									li.welcome_name= raw("Welcome <span class='fb'>#{full_name user}</span>")
+									/ li.welcome_name= raw("Welcome <span class='fb'>#{full_name user}</span>")
 									li= link_to 'Home', home_path
 									li= link_to 'About', about_path
-									li= link_to 'Sign Out', destroy_user_session_path
+									li= link_to 'Sign Out', destroy_user_session_path, :class => 'mrs'
+									li= user_image user, 'small', :width => '30px'
 							- else
 								li= link_to 'Sign In', new_user_session_path, :class => 'mrl fl db'
-								li= link_to 'Register', new_user_registration_path, :class => 'mrl fl db'
+								li= link_to 'Sign Up', new_user_registration_path, :class => 'mrl fl db'
 							.clearfix
 						.clearfix

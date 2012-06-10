@@ -72,6 +72,9 @@
 @mixin light_text {
 	color: #999;
 }
+@mixin black_text {
+	color: #000;
+}
 @mixin cp {
 	cursor: pointer;
 }
@@ -130,6 +133,10 @@
 	li {
 		@include fl;
 	}
+}
+
+@mixin tiny {
+	font-size: 10px;
 }
 //@mixin component_border {
 //	border: 1px solid $border_color;

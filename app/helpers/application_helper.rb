@@ -24,11 +24,13 @@ module ApplicationHelper
 		end
 	end
 
-	def user_image user, opts = {}
+	def user_image user, size = nil, opts = {}
 		if user
 			get_width = opts[:width].presence ? "#{opts[:width]}px" : "100px"
-			if user.image 
-				image_tag( user.image, opts.merge( :style => "#{ image_radius(0) }", :width => get_width ) ) 
+			image = user.image 
+			if image
+				image = image.split('?')[0] if (size == 'small')
+				image_tag( image, opts.merge( :style => "#{ image_radius(0) }", :width => get_width ) ) 
 			else
 				content_tag('div', '', opts.merge( :style => "#{ image_radius(0) }", :width => get_width, :class => 'default_profile_pic' ) )
 			end

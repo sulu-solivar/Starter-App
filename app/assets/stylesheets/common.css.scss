@@ -9,7 +9,7 @@ body {
 }
 
 .gray_bg {
-	background: #BDDDF7;
+	background: #CDDEED;
 }
 
 ul {
@@ -63,4 +63,13 @@ ul.floated {
 }
 .tc {
 	@include tc;
+}
+.tiny {
+	@include tiny;
+}
+.pr {
+	@include relative;
+}
+.pa {
+	@include absolute;
 }
