@@ -5,6 +5,7 @@ gem "devise", ">= 2.1.0.rc"
 gem "omniauth"
 gem 'omniauth-linkedin'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 gem 'nifty-generators'
 gem "bootstrap-sass", ">= 2.0.1"
 gem 'jquery-rails'
