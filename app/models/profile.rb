@@ -2,6 +2,6 @@ class Profile < ActiveRecord::Base
   
   belongs_to :user
 
-  attr_accesible :about
+  attr_accessible :about
 
 end
