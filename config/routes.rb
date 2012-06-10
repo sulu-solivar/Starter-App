@@ -15,7 +15,9 @@ Starter::Application.routes.draw do
   
   resources :authentications
 
-  # match '/users/sign_in' => 'devise/sessions#new', :as => :root
+  controller :home do
+    match '/about', :action => 'about', :as => 'about'
+  end
 
 
   # The priority is based upon order of creation:

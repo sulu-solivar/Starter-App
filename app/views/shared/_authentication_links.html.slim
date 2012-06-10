@@ -1,9 +1,19 @@
-ul.floated
-	.fr
-		li.lh30.mrm
-			i Or, sign in with these services
-		li= link_to image_tag('auth_buttons/facebook_32.png'), '/auth/facebook?display=popup'
-		li= link_to image_tag('auth_buttons/linkedin_32.png'), '/auth/linkedin'
-		li= link_to image_tag('auth_buttons/twitter_32.png'), '/auth/twitter'
+- if session['omniauth']
+	ul.floated
+		.fr
+			li.lh30
+				i You are now using
+			li.mlm= image_tag "auth_buttons/#{session['omniauth'][:provider]}_32.png"
+			.clearfix
 		.clearfix
-	.clearfix
+
+- else
+	ul.floated
+		.fr
+			li.lh30.mrm
+				i Or, sign in with these services
+			li= link_to image_tag('auth_buttons/facebook_32.png'), '/auth/facebook?display=popup'
+			li= link_to image_tag('auth_buttons/linkedin_32.png'), '/auth/linkedin'
+			li= link_to image_tag('auth_buttons/twitter_32.png'), '/auth/twitter'
+			.clearfix
+		.clearfix

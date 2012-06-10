@@ -17,6 +17,7 @@ header {
 			a {
 				line-height: 40px;
 				height: 40px;
+				@include pl(10px);
 				@include db;
 			}
 			img {
