@@ -10,4 +10,6 @@ class HomeController < ApplicationController
 		@about_page = "This is about page of starter Application"
 	end
 
+
+
 end

@@ -36,3 +36,9 @@
 .popup {
 	@include popup;
 }
+
+.popup_container {
+	height: 100%;
+	position: relative;
+	@include pb(50px);
+}

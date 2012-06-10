@@ -9,20 +9,24 @@
 				= devise_error_messages!
 
 				- if session['omniauth']
-					- fb_fname = session['omniauth'][:info][:first_name]
-					- fb_lname = session['omniauth'][:info][:last_name]
-					- fb_image = session['omniauth'][:info][:image]
+					- provider = session['omniauth'][:provider]
+					- if provider == 'twitter'
+						- name = session['omniauth'][:info][:name]
+					- else
+						- fname = session['omniauth'][:info][:first_name]
+						- lname = session['omniauth'][:info][:last_name]
+					- image = session['omniauth'][:info][:image]
 					
 					div
 						.fr
-							h2.fl.fb.mrm= fb_fname + ' ' + fb_lname
-							.fl= image_tag pull_normal_fb_pic(fb_image), :style => "#{image_radius}"
+							h2.fl.fb.mrm= ( provider == 'twitter' ) ? (name) : (fname + ' ' + lname)
+							.fl= image_tag pull_normal_fb_pic(image), :style => "#{image_radius}"
 						.clearfix
 
-					= f.text_field :first_name, :value => fb_fname
-					= f.text_field :last_name, :value => fb_lname
-					= f.email_field :email, :value => session['omniauth'][:info][:email]
-					= f.hidden_field :image, :value => pull_large_fb_pic(fb_image)
+					= f.text_field :first_name, :value => ( provider == 'twitter' ) ? (name.split(' ')[0]) : (fname), :placeholder => 'FIRST NAME'
+					= f.text_field :last_name, :value => ( provider == 'twitter' ) ? (name.split(' ')[1]) : (lname), :placeholder => 'LAST NAME'
+					= f.email_field :email, :value => session['omniauth'][:info][:email], :placeholder => 'EMAIL'
+					= f.hidden_field :image, :value => pull_large_fb_pic(image)
 					
 
 

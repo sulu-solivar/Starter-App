@@ -8,12 +8,21 @@
 		.clearfix
 
 - else
+	
+	- types = AuthenticationType.where(:enable => true).where("provider != 'devise'")
+	- devise_enabled = AuthenticationType.find_by_provider('devise').enable
+
 	ul.floated
 		.fr
 			li.lh30.mrm
-				i Or, sign in with these services
-			li= link_to image_tag('auth_buttons/facebook_32.png'), '/auth/facebook?display=popup'
-			li= link_to image_tag('auth_buttons/linkedin_32.png'), '/auth/linkedin'
-			li= link_to image_tag('auth_buttons/twitter_32.png'), '/auth/twitter'
+				- if devise_enabled
+					i Or, sign in with these services
+				- else
+					b
+						i Sign in with these services
+
+			- types.each do |type|
+				li= link_to image_tag("auth_buttons/#{type.provider}_32.png"), "/auth/#{type.provider}"
+
 			.clearfix
 		.clearfix

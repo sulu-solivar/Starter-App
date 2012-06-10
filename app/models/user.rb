@@ -10,8 +10,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :image
 
+  validates :first_name, :presence => true
 
 	def apply_omniauth omniauth
 		authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])

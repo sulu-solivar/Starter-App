@@ -1,7 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# creating authentication types
+if AuthenticationType.count == 0
+	puts "Creating Types of Authentication"
+	types = ['devise', 'facebook', 'linkedin', 'twitter']
+	types.each do |type|
+		AuthenticationType.create( :provider => type, :enable => true )
+	end
+end
+
+# Creating an admin user
+if AdminUser.count == 0
+	puts "Creating Admin account"
+	AdminUser.create!(:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password')
+end
+

@@ -1,0 +1,18 @@
+@import 'mixins';
+
+#error_explanation {
+	h2 {
+		@include error;
+		@include tc;
+		@include p(5px);
+		@include rad(5px);
+		@include shadow(0px 0px 3px #AAA);
+		font-size: 14px;
+	}
+	ul {
+		@include p(0px 0px 10px 30px);
+		li {
+
+		}
+	}
+}

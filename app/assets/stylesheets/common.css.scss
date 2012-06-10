@@ -61,3 +61,6 @@ ul {
 ul.floated {
 	@include floated;
 }
+.tc {
+	@include tc;
+}
