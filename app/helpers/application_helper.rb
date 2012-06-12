@@ -67,4 +67,8 @@ module ApplicationHelper
 		end
 	end
 
+	def placeholder width, height
+		image_tag "http://placehold.it/#{width}x#{height}"
+	end
+	
 end
