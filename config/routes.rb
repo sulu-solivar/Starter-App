@@ -1,5 +1,6 @@
-Starter::Application.routes.draw do
+Timesheet::Application.routes.draw do
   
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -10,6 +11,7 @@ Starter::Application.routes.draw do
   end
   
   resources :authentications
+  resources :employee
 
   controller :home do
     match '/about', :action => 'about', :as => 'about'

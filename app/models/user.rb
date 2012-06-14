@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
 
 	# relations
 	has_many :authentications
+	has_many :employees
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -10,7 +11,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :image
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :image, :Manger
 
   validates :first_name, :presence => true
 
@@ -21,4 +22,5 @@ class User < ActiveRecord::Base
 	def password_required?
 		(authentications.empty? || !password.blank?) && super
 	end
+	
 end

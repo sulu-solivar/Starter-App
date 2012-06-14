@@ -1,0 +1,30 @@
+h1 Time Sheet
+
+div class="row"
+  div class="span6 offset3"
+    = form_for @employee, :url => { :action => 'create' } do |f| 
+      table
+        tr
+          td
+            = f.label :name 
+          td
+            = f.text_field :name  
+        tr
+          td
+          	= f.label :task 
+          td
+            = f.text_field :task
+        tr
+          td
+						= f.label :date
+          td
+						= f.datetime_select :date
+        tr
+          td
+						= f.label :billinghrs
+          td
+						= f.text_field :billinghrs 
+        tr
+          td
+						= f.submit "submit", class: "btn"
+          td

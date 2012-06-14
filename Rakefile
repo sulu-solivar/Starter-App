@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Starter::Application.load_tasks
+Timesheet::Application.load_tasks

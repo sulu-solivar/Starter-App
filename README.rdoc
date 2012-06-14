@@ -1,8 +1,8 @@
-Starter App for Solivar Technologies
+Timesheet App for Solivar Technologies
 
 Step 1 : Clone project from github
-Step 2 : Rename folder name from "StarterApp" to "NewProjectName"
-Step 3 : In Sublime editor Prest CTRL-SHIFT-F and find word "Starter" replace with "NewProjectName"
+Step 2 : Rename folder name from "TimesheetApp" to "NewProjectName"
+Step 3 : In Sublime editor Prest CTRL-SHIFT-F and find word "Timesheet" replace with "NewProjectName"
 				 These files will be modified
 						config/application.rb
 						config/environment.rb
