@@ -14,4 +14,4 @@ ENV['TWITTER_CONSUMER_KEY'] = 'E7zYzlMEyK4VAOBJNkBVAQ'
 ENV['TWITTER_CONSUMER_SECRET'] = 'X5v0XCHaNOuI1UTK3G8uazY8W1oRDIZH2bRZ8pjLUI'
 
 # Initialize the rails application
-Timesheet::Application.initialize!
+Starter::Application.initialize!
