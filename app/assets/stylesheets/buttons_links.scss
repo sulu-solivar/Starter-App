@@ -18,13 +18,13 @@
 
 @mixin button {
 	@include p(5px);
-	@include gradient(#1585D5, #105D93);
+	@include gradient(#BAE2FE, #487DA3);
 	@include fb;
-	@include no_border;
+//	@include no_border;
 	@include cp;
 	@include rad(5px);
 	@include shadow(0px 2px 2px #333);
-	border: 1px solid #1585D5;
+	border: 1px solid #BCBCBC;
 	color: #FFF;
 	&:active {
 		@include shadow(0px 2px 0px #AAA);

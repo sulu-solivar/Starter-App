@@ -1,6 +1,8 @@
 @import 'mixins';
 @import 'buttons_links';
 
+@mixin logo_bg {background: url('logo.png') no-repeat;}
+
 header {
 	background: #f4f4f4;
 	border-bottom: 1px solid #004B81;
@@ -16,10 +18,12 @@ header {
 			@include db;
 			@include fl;
 			a {
-				line-height: 40px;
-				height: 40px;
-				@include pl(10px);
+				@include m(25px 10px 0px 10px);
+				@include p(5px 7px);
+				@include fb;
 				@include db;
+				@include rad(5px);
+				text-transform: uppercase;
 			}
 			img {
 				@include pt(5px)
@@ -27,12 +31,23 @@ header {
 		}
 	}
 	a {
-		@include white_link
+		@include ts(1px 1px 05px #000 );
+		color: #fff;
+		&:hover {
+			background: #153B5C;
+			@include tdn;		
+		}
 	}
 }
 
 .logo {
-	background: url('logo.png') no-repeat;
-	width: 400px; // image's width can be varied upto 400px (227px is starter app's width)
+	@include logo_bg;
+	width: 400px; // image's width can be varied upto 400px (227px is Docs app's width)
 	height: 40px;
+	@include p(0px !important);
+	@include m(10px !important);
+	&:hover {
+		@include logo_bg;
+		@include tdn;		
+	}
 }

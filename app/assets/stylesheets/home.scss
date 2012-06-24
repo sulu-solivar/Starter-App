@@ -3,9 +3,9 @@
 .welcome_name {
 	@include absolute;
 	@include tiny;
-	@include black_text;
-	right: 35px;
-	top: 2px;
+	color: #FFF;
+	right: 15px;
+	top: 5px;
 	z-index: 100;
 	height: 10px !important;
 	line-height: 10px !important;

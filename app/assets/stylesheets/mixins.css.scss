@@ -138,16 +138,7 @@
 @mixin tiny {
 	font-size: 10px;
 }
-//@mixin component_border {
-//	border: 1px solid $border_color;
-//	@include rad5;
-//}
 
-//@mixin component {
-//	-webkit-border-radius: 5px;
-//	-moz-border-radius: 5px;
-//	border-radius: 5px;
-//	background: #FFF;
-//	border: 1px solid #DDD;
-//	margin-bottom: 10px;
-//}
+@mixin ts($px) {
+	text-shadow: $px; 
+}

@@ -9,7 +9,7 @@
 	left: 50%;
 	top: 20%;
 	.popup_top {
-		@include gradient(#EEEEEE, #C6C6C6);
+		@include gradient(#BEDBF4, #C7D2D9);
 		@include p(10px 20px 20px 20px);
 		@include rad(10px 10px 0px 0px);
 		.popup_header {
@@ -23,7 +23,8 @@
 	}
 	.popup_footer {
 		@include rad(0px 0px 10px 10px);
-		@include gradient(#EEE, #CCC);
+		// background: #63B8FF;
+		@include gradient(#63B8FF, #2C4D67);
 		@include p(10px);
 		border-top: 1px solid #888;
 	}
