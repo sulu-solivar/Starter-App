@@ -1,7 +1,7 @@
 @import 'mixins';
 
 body {
-	@include default_font;
+//	@include default_font;
 	// background: url('main_bg.jpg') #f4f4f4 repeat;
 	font-size: 13px;
 	margin: 0px;
@@ -33,22 +33,22 @@ ul {
 .clearfix {
 	@include clearfix;
 }
-.error, .alert {
-	@include ma;
-	@include p(5px);
-	@include content_width;
-	@include rad(5px);
-	@include shadow(0px 0px 5px #AAA);
-	@include error;
-}
-.success, .notice {
-	@include ma;
-	@include content_width;
-	@include p(5px);
-	@include rad(5px);
-	@include shadow(0px 0px 5px #AAA);
-	@include success;
-}
+//.error, .alert {
+//	@include ma;
+//	@include p(5px);
+//	@include content_width;
+//	@include rad(5px);
+//	@include shadow(0px 0px 5px #AAA);
+//	@include error;
+//}
+//.success, .notice {
+//	@include ma;
+//	@include content_width;
+//	@include p(5px);
+//	@include rad(5px);
+//	@include shadow(0px 0px 5px #AAA);
+//	@include success;
+//}
 
 .beautify_params {
 	@include beautify_params;
