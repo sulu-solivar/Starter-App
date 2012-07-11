@@ -5,19 +5,14 @@ header
 			.container.pr
 				= link_to 'Starter App', root_path, :class => 'brand'
 				.nav-collapse.collapse
-					ul.nav
-					
+					ul.nav.fr
 						- if user_signed_in?
-								li= link_to 'Home', home_path
-								li= link_to 'About', about_path
-								
+							li= user_image user, 'small', :width => '30', :style => 'padding-top: 8px;'
+							li= link_to raw("Welcome <span class='fb'>#{full_name user}</span>"), '#'
+							li= link_to 'Home', home_path
+							li= link_to 'About', about_path
+							li= link_to 'Sign Out', destroy_user_session_path
 						- else
 							li.active= link_to 'Sign In', new_user_session_path
 							li= link_to 'Sign Up', new_user_registration_path
-						.clearfix
-					ul.nav.fr
-						- if user_signed_in?
-							li= user_image user, 'small', :width => '30', :style => 'padding-top: 5px;'
-							li= link_to raw("Welcome <span class='fb'>#{full_name user}</span>"), '#'
-							li= link_to 'Sign Out', destroy_user_session_path
 					.clearfix

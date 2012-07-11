@@ -2,28 +2,34 @@
 @import 'buttons_links';
 
 @mixin logo_bg {background: url('logo.png') no-repeat;}
-
+@mixin header_link_bg {
+	background: #153B5C;
+	color: #FFF !important;
+}
 header {
 	background: #f4f4f4;
-	border-bottom: 1px solid #004B81;
 	background-color: #CCC !important;
-	color: #333 !important;
 	width: 100%;
-	@include gradient(#1585D5, #105D93);
+	.navbar-inner{
+		@include gradient(#1585D5, #105D93);
+	}
 	a {
-		
+		color: #DDD !important;
 	}
 	ul.nav {
 		li {
 			@include db;
 			@include fl;
 			a {
-				@include m(25px 10px 0px 10px);
+				@include m(5px);
 				@include p(5px 7px);
 				@include fb;
 				@include db;
 				@include rad(5px);
 				text-transform: uppercase;
+			}
+			&:hover{
+				@include header_link_bg;
 			}
 			img {
 				@include pt(5px)
@@ -34,20 +40,25 @@ header {
 		@include ts(1px 1px 05px #000 );
 		color: #fff;
 		&:hover {
-			background: #153B5C;
-			@include tdn;		
+			@include header_link_bg;
+			@include rad(5px);
+			@include tdn;
 		}
 	}
 }
 
-.logo {
-	@include logo_bg;
-	width: 400px; // image's width can be varied upto 400px (227px is Docs app's width)
-	height: 40px;
-	@include p(0px !important);
-	@include m(10px !important);
-	&:hover {
-		@include logo_bg;
-		@include tdn;		
-	}
+.brand {
+	@include mt(5px);
 }
+
+//.logo {
+//	@include logo_bg;
+//	width: 400px; // image's width can be varied upto 400px (227px is Docs app's width)
+//	height: 40px;
+//	@include p(0px !important);
+//	@include m(10px !important);
+//	&:hover {
+//		@include logo_bg;
+//		@include tdn;		
+//	}
+//}
