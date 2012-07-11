@@ -30,9 +30,9 @@ module ApplicationHelper
 			image = user.image 
 			if image
 				image = image.split('?')[0] if (size == 'small')
-				image_tag( image, opts.merge( :style => "#{ image_radius(0) }", :width => get_width ) ) 
+				image_tag( image, opts.merge( :style => "#{ image_radius(0) } #{opts[:style]}", :width => get_width ) ) 
 			else
-				content_tag('div', '', opts.merge( :style => "#{ image_radius(0) }", :width => get_width, :class => 'default_profile_pic' ) )
+				content_tag('div', '', opts.merge( :style => "#{ image_radius(0) } #{opts[:style]}", :width => get_width, :class => 'default_profile_pic' ) )
 			end
 		end
 	end
