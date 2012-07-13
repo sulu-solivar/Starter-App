@@ -7,12 +7,12 @@ header
 				.nav-collapse.collapse
 					ul.nav.fr
 						- if user_signed_in?
-							li= user_image user, 'small', :width => '30', :style => 'padding-top: 8px;'
-							li= link_to raw("Welcome <span class='fb'>#{full_name user}</span>"), '#'
+							li.no_bg.mrs= user_image user, 'small', :width => '30', :style => 'padding-top: 8px;'
+							li.welcome_name= full_name user
 							li= link_to 'Home', home_path
 							li= link_to 'About', about_path
 							li= link_to 'Sign Out', destroy_user_session_path
 						- else
-							li.active= link_to 'Sign In', new_user_session_path
+							li= link_to 'Sign In', new_user_session_path
 							li= link_to 'Sign Up', new_user_registration_path
 					.clearfix

@@ -73,3 +73,6 @@ ul.floated {
 .pa {
 	@include absolute;
 }
+.no_bg {
+	background: none !important;
+}

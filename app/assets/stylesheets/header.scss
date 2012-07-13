@@ -1,5 +1,4 @@
 @import 'mixins';
-@import 'buttons_links';
 
 @mixin logo_bg {background: url('logo.png') no-repeat;}
 @mixin header_link_bg {
@@ -35,6 +34,11 @@ header {
 				@include pt(5px)
 			}
 		}
+		li.welcome_name {
+			&:hover {
+				background: none;
+			}
+		}
 	}
 	a {
 		@include ts(1px 1px 05px #000 );
@@ -50,15 +54,3 @@ header {
 .brand {
 	@include mt(5px);
 }
-
-//.logo {
-//	@include logo_bg;
-//	width: 400px; // image's width can be varied upto 400px (227px is Docs app's width)
-//	height: 40px;
-//	@include p(0px !important);
-//	@include m(10px !important);
-//	&:hover {
-//		@include logo_bg;
-//		@include tdn;		
-//	}
-//}
